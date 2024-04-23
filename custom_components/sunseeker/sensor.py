@@ -535,7 +535,7 @@ class SunseekerSensor(SunseekerEntity, SensorEntity):
             val = self._data_handler.get_device(self._sn).mul_zon3
         elif self._valuepair == "mul_zon4":
             val = self._data_handler.get_device(self._sn).mul_zon4
-         elif self._valuepair == "mul_pro1":
+        elif self._valuepair == "mul_pro1":
             val = self._data_handler.get_device(self._sn).mul_pro1
         elif self._valuepair == "mul_pro2":
             val = self._data_handler.get_device(self._sn).mul_pro2
@@ -543,7 +543,7 @@ class SunseekerSensor(SunseekerEntity, SensorEntity):
             val = self._data_handler.get_device(self._sn).mul_pro3
         elif self._valuepair == "mul_pro4":
             val = self._data_handler.get_device(self._sn).mul_pro4
-         elif self._valuepair == "mul_meter1":
+        elif self._valuepair == "mul_meter1":
             val = self._data_handler.get_device(self._sn).mul_meter1
         elif self._valuepair == "mul_meter2":
             val = self._data_handler.get_device(self._sn).mul_meter2
