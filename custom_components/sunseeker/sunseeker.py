@@ -314,7 +314,7 @@ class SunseekerRoboticmower:
         )
         _LOGGER.debug("MQTT subscribe ok")
 
-    def updatemap(self, client, userdata))
+    def updatemap(self, client, userdata):
         return
 
     def on_mqtt_message(self, client, userdata, message):  # noqa: C901
@@ -401,7 +401,7 @@ class SunseekerRoboticmower:
                 if "cur_area" in data:
                     device.cur_area = data.get("cur_area") 
                 if "ver" in data and "cmd" in data:
-                    if (data.get("cmd") == 522)
+                    if (data.get("cmd") == 522):
                         device.mapversion = data.get("ver")
                         self.updatemap(self, client, userdata)
                 if "Mon" in data:

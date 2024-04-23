@@ -535,6 +535,35 @@ class SunseekerSensor(SunseekerEntity, SensorEntity):
             val = self._data_handler.get_device(self._sn).mul_zon3
         elif self._valuepair == "mul_zon4":
             val = self._data_handler.get_device(self._sn).mul_zon4
+         elif self._valuepair == "mul_pro1":
+            val = self._data_handler.get_device(self._sn).mul_pro1
+        elif self._valuepair == "mul_pro2":
+            val = self._data_handler.get_device(self._sn).mul_pro2
+        elif self._valuepair == "mul_pro3":
+            val = self._data_handler.get_device(self._sn).mul_pro3
+        elif self._valuepair == "mul_pro4":
+            val = self._data_handler.get_device(self._sn).mul_pro4
+         elif self._valuepair == "mul_meter1":
+            val = self._data_handler.get_device(self._sn).mul_meter1
+        elif self._valuepair == "mul_meter2":
+            val = self._data_handler.get_device(self._sn).mul_meter2
+        elif self._valuepair == "mul_meter3":
+            val = self._data_handler.get_device(self._sn).mul_meter3
+        elif self._valuepair == "mul_meter4":
+            val = self._data_handler.get_device(self._sn).mul_meter4
+        elif self._valuepair == "on_min":
+            val = self._data_handler.get_device(self._sn).on_min
+        elif self._valuepair == "total_min":
+            val = self._data_handler.get_device(self._sn).total_min
+        elif self._valuepair == "on_area":
+            val = self._data_handler.get_device(self._sn).on_area
+        elif self._valuepair == "area":
+            val = self._data_handler.get_device(self._sn).area
+        elif self._valuepair == "cur_area":
+            val = self._data_handler.get_device(self._sn).cur_area
+        elif self._valuepair == "mapversion":
+            val = self._data_handler.get_device(self._sn).mapversion
+
         elif self._valuepair == "errortype":
             val = self._data_handler.get_device(self._sn).errortype
         return val
