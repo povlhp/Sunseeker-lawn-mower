@@ -37,12 +37,28 @@ class SunseekerDevice:
         self.zoneOpenFlag = False
         self.mul_en = False
         self.mul_auto = False
-        self.mul_zon1 = 0
+        self.mul_zon1 = 0   # percentage along wire for zone1
         self.mul_zon2 = 0
         self.mul_zon3 = 0
         self.mul_zon4 = 0
+        self.mul_meter1 = 0 # mm along wire for zone 1
+        self.mul_meter2 = 0
+        self.mul_meter3 = 0
+        self.mul_meter4 = 0
+        self.mul_pro1 = 0   # Percentage of time to start mowing at zone1
+        self.mul_pro2 = 0
+        self.mul_pro3 = 0
+        self.mul_pro4 = 0
         self.forceupdate = False
         self.error_text = ""
+        self.on_min = 0
+        self.total_min = 0
+        self.on_area = 0
+        self.area = 0
+        self.cur_area = 0
+        self.mapversion = 0
+        self.map = [];
+
 
         self.DeviceModel = ""
         self.DeviceName = ""
@@ -298,6 +314,9 @@ class SunseekerRoboticmower:
         )
         _LOGGER.debug("MQTT subscribe ok")
 
+    def updatemap(self, client, userdata))
+        return
+
     def on_mqtt_message(self, client, userdata, message):  # noqa: C901
         """On mqtt message."""
         _LOGGER.debug("MQTT message: " + message.topic + " " + message.payload.decode())  # noqa: G003
@@ -355,6 +374,36 @@ class SunseekerRoboticmower:
                     device.mul_zon3 = data.get("mul_zon3")
                 if "mul_zon4" in data:
                     device.mul_zon4 = data.get("mul_zon4")
+                if "mul_meter1" in data:
+                    device.mul_meter1 = data.get("mul_meter1")
+                if "mul_meter2" in data:
+                    device.mul_meter2 = data.get("mul_meter2")
+                if "mul_meter3" in data:
+                    device.mul_meter3 = data.get("mul_meter3")
+                if "mul_meter4" in data:
+                    device.mul_meter4 = data.get("mul_meter4")
+                if "mul_pro1" in data:
+                    device.mul_pro1 = data.get("mul_pro1")
+                if "mul_pro2" in data:
+                    device.mul_pro2 = data.get("mul_pro2")
+                if "mul_pro3" in data:
+                    device.mul_pro3 = data.get("mul_pro3")
+                if "mul_pro4" in data:
+                    device.mul_pro4 = data.get("mul_pro4")
+                if "on_min" in data:
+                    device.on_min = data.get("on_min")
+                if "total_min" in data:
+                    device.total_min = data.get("total_min")
+                if "on_area" in data:
+                    device.on_area = data.get("on_area")                                                       
+                if "area" in data:
+                    device.area = data.get("area")                     
+                if "cur_area" in data:
+                    device.cur_area = data.get("cur_area") 
+                if "ver" in data and "cmd" in data:
+                    if (data.get("cmd") == 522)
+                        device.mapversion = data.get("ver")
+                        self.updatemap(self, client, userdata)
                 if "Mon" in data:
                     device.Schedule.UpdateFromMqtt(data.get("Mon"), 1)
                     schedule = True

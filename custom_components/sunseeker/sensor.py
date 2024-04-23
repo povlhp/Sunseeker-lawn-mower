@@ -205,6 +205,159 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             for coordinator in robot_coordinators(hass, entry)
         ]
     )
+###
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Zone 1 pct time",
+                "%",
+                "mul_pro1",
+                "",
+                "mdi:clock-time-one",
+                "sunseeker_mul_pro1",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Zone 1 start in mm along wire",
+                "mm",
+                "mul_meter1",
+                "",
+                "mdi:tape-measure",
+                "sunseeker_mul_meter1",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Zone 2 start in mm along wire",
+                "mm",
+                "mul_meter2",
+                "",
+                "mdi:tape-measure",
+                "sunseeker_mul_meter2",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Zone 3 start in mm along wire",
+                "mm",
+                "mul_meter3",
+                "",
+                "mdi:tape-measure",
+                "sunseeker_mul_meter4",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Zone 4 start in mm along wire",
+                "mm",
+                "mul_meter4",
+                "",
+                "mdi:tape-measure",
+                "sunseeker_mul_meter4",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )            
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Power On minutes",
+                "min",
+                "on_min",
+                "",
+                "mdi:timersand",
+                "sunseeker_on_min",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "total On minutes",
+                "min",
+                "total_min",
+                "",
+                "mdi:timersand",
+                "sunseeker_total_min",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "On Area",
+                "m2",
+                "on_area",
+                "",
+                "mdi:map-marker-path",
+                "sunseeker_on_area",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Area (from map)",
+                "m2",
+                "area",
+                "",
+                "mdi:map-marker-path",
+                "sunseeker_area",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                SensorDeviceClass.POWER_FACTOR,
+                "Current Area",
+                "m2",
+                "cur_area",
+                "",
+                "mdi:map-marker-path",
+                "sunseeker_cur_area",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+###    
     async_add_devices(
         [
             SunseekerSensor(
