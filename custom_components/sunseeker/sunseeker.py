@@ -567,6 +567,7 @@ class SunseekerRoboticmower:
                 self.borderLen = response_data["borderLength"]
 
                 #device.settings = response_data
+                _LOGGER.debug("data from mapversion")
                 _LOGGER.debug(json.dumps(response_data))
 
                 if response_data["code"] != 0:
