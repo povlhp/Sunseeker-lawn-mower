@@ -210,7 +210,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Zone 1 pct time",
                 "%",
                 "mul_pro1",
@@ -226,7 +226,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Zone 1 start in mm along wire",
                 "mm",
                 "mul_meter1",
@@ -241,7 +241,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Zone 2 start in mm along wire",
                 "mm",
                 "mul_meter2",
@@ -256,7 +256,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Zone 3 start in mm along wire",
                 "mm",
                 "mul_meter3",
@@ -271,7 +271,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Zone 4 start in mm along wire",
                 "mm",
                 "mul_meter4",
@@ -286,7 +286,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Power On minutes",
                 "min",
                 "on_min",
@@ -301,7 +301,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "total On minutes",
                 "min",
                 "total_min",
@@ -316,7 +316,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "On Area",
                 "m2",
                 "on_area",
@@ -331,7 +331,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Area (from map)",
                 "m2",
                 "area",
@@ -346,7 +346,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                SensorDeviceClass.POWER_FACTOR,
+                None,
                 "Current Area",
                 "m2",
                 "cur_area",
