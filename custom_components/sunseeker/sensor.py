@@ -272,8 +272,8 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             SunseekerSensor(
                 coordinator,
                 None,
-                "Zone 1 start in mm along wire",
-                "mm",
+                "Zone 1 start in m along wire",
+                "m",
                 "mul_meter1",
                 "",
                 "mdi:tape-measure",
@@ -287,8 +287,8 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             SunseekerSensor(
                 coordinator,
                 None,
-                "Zone 2 start in mm along wire",
-                "mm",
+                "Zone 2 start in m along wire",
+                "m",
                 "mul_meter2",
                 "",
                 "mdi:tape-measure",
@@ -302,8 +302,8 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             SunseekerSensor(
                 coordinator,
                 None,
-                "Zone 3 start in mm along wire",
-                "mm",
+                "Zone 3 start in m along wire",
+                "m",
                 "mul_meter3",
                 "",
                 "mdi:tape-measure",
@@ -317,8 +317,8 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             SunseekerSensor(
                 coordinator,
                 None,
-                "Zone 4 start in mm along wire",
-                "mm",
+                "Zone 4 start in m along wire",
+                "m",
                 "mul_meter4",
                 "",
                 "mdi:tape-measure",

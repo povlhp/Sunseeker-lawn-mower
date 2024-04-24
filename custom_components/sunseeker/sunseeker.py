@@ -213,6 +213,7 @@ class SunseekerRoboticmower:
             self.login_ok = True
             if self.session.get("access_token"):
                 self.get_device_list()
+                self.get_mapversion()
                 for device in self.devicelist["data"]:
                     device_sn = device["deviceSn"]
                     self.deviceArray.append(device_sn)
@@ -314,9 +315,6 @@ class SunseekerRoboticmower:
         )
         _LOGGER.debug("MQTT subscribe ok")
 
-    def updatemap(self, client, userdata):
-        return
-
     def on_mqtt_message(self, client, userdata, message):  # noqa: C901
         """On mqtt message."""
         _LOGGER.debug("MQTT message: " + message.topic + " " + message.payload.decode())  # noqa: G003
@@ -375,13 +373,13 @@ class SunseekerRoboticmower:
                 if "mul_zon4" in data:
                     device.mul_zon4 = data.get("mul_zon4")
                 if "mul_meter1" in data:
-                    device.mul_meter1 = data.get("mul_meter1")
+                    device.mul_meter1 = data.get("mul_meter1")/1000.0
                 if "mul_meter2" in data:
-                    device.mul_meter2 = data.get("mul_meter2")
+                    device.mul_meter2 = data.get("mul_meter2")/1000.0
                 if "mul_meter3" in data:
-                    device.mul_meter3 = data.get("mul_meter3")
+                    device.mul_meter3 = data.get("mul_meter3")/1000.0
                 if "mul_meter4" in data:
-                    device.mul_meter4 = data.get("mul_meter4")
+                    device.mul_meter4 = data.get("mul_meter4")/1000.0
                 if "mul_pro1" in data:
                     device.mul_pro1 = data.get("mul_pro1")
                 if "mul_pro2" in data:
@@ -399,11 +397,11 @@ class SunseekerRoboticmower:
                 if "area" in data:
                     device.area = data.get("area")                     
                 if "cur_area" in data:
-                    device.cur_area = data.get("cur_area") 
+                    device.cur_area = data.get("cur_area")/10 
                 if "ver" in data and "cmd" in data:
                     if (data.get("cmd") == 522):
                         device.mapversion = data.get("ver")
-                        self.updatemap(self, client, userdata)
+                        self.updatemap(self)
                 if "Mon" in data:
                     device.Schedule.UpdateFromMqtt(data.get("Mon"), 1)
                     schedule = True
@@ -531,6 +529,63 @@ class SunseekerRoboticmower:
                 _LOGGER.debug(f"Get settings attempt {attempt}: Error: {err}")  # noqa: G004
             except Exception as error:  # pylint: disable=broad-except
                 _LOGGER.debug(f"Get settings attempt {attempt}: failed {error}")  # noqa: G004
+
+    def updatemap(self):
+        return
+
+
+    def get_mapversion(self, snr):
+        """Get map version."""
+        device = self.get_device(snr)
+        attempt = 0
+        while attempt < MAX_LOGIN_RETRIES:
+            if attempt > 0:
+                time.sleep(1)
+            attempt = attempt + 1
+
+            try:
+                device = self.get_device(snr)
+                response = requests.get(
+                    url=f"http://server.sk-robot.com/api/map/work-map/newest/1/{snr}",
+                    headers={
+                        "Accept-Language": self.language,
+                        "Authorization": "bearer " + self.session["access_token"],
+                        "Host": "server.sk-robot.com",
+                        "Connection": "Keep-Alive",
+                        "User-Agent": "okhttp/4.4.1",
+                    },
+                    timeout=10,
+                )
+                response_data = response.json()
+                oldv = self.mapversion
+                self.mapversion = response_data["mapSn"]
+                if (oldv != self.mapversion):
+                    a = 3
+                self.borderLen = response_data["borderLength"]
+
+                #device.settings = response_data
+                _LOGGER.debug(json.dumps(response_data))
+
+                if response_data["code"] != 0:
+                    _LOGGER.debug(f"Error getting device settings for {snr}")  # noqa: G004
+                    _LOGGER.debug(json.dumps(response_data))
+                    return
+                if self._dataupdated is not None:
+                    self._dataupdated(device.devicesn)
+                return
+            except requests.exceptions.HTTPError as errh:
+                _LOGGER.debug(f"Get settings attempt {attempt}: Http Error:  {errh}")  # noqa: G004
+            except requests.exceptions.ConnectionError as errc:
+                _LOGGER.debug(
+                    f"Get settings attempt {attempt}: Error Connecting: {errc}"  # noqa: G004
+                )
+            except requests.exceptions.Timeout as errt:
+                _LOGGER.debug(f"Get settings attempt {attempt}: Timeout Error: {errt}")  # noqa: G004
+            except requests.exceptions.RequestException as err:
+                _LOGGER.debug(f"Get settings attempt {attempt}: Error: {err}")  # noqa: G004
+            except Exception as error:  # pylint: disable=broad-except
+                _LOGGER.debug(f"Get settings attempt {attempt}: failed {error}")  # noqa: G004
+        
 
     def update_devices(self, device_sn):
         """Update device."""

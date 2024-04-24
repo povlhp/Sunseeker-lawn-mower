@@ -100,10 +100,6 @@
         "mul_meter4": {
           "name": "Zone distance 4"
         },
-
-        "sunseeker_mul_meter1": {
-          "name": "Zone 1 mm along wire"
-        },
         "sunseeker_on_min": {
           "name": "On time"
         },
@@ -114,7 +110,7 @@
           "name": "On area"
         },
         "sunseeker_area": {
-          "name": "Area"
+          "name": "Lawn area"
         },
         "sunseeker_cur_area": {
           "name": "Current area"
