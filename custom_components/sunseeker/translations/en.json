@@ -115,8 +115,8 @@
         "sunseeker_cur_area": {
           "name": "Current area"
         },
-        "map version": {
-          "name": "Map version"
+        "mapversion": {
+          "name": "Map Serial"
         },
         "borderlen": {
           "name": "Border Length"

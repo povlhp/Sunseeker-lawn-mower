@@ -51,13 +51,13 @@ class SunseekerDevice:
         self.mul_pro4 = 0
         self.forceupdate = False
         self.error_text = ""
-        self.on_min = 0
-        self.total_min = 0
-        self.on_area = 0
-        self.area = 0
-        self.cur_area = 0
-        self.mapversion = 0
-        self.borderLen = 0
+        self.on_min = None
+        self.total_min = None
+        self.on_area = None
+        self.area = None
+        self.cur_area = None
+        self.mapversion = None
+        self.borderLen = None
         self.map = [];
 
 

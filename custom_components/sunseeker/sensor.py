@@ -260,7 +260,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "%",
                 "mul_pro4",
                 "",
-                "mdi:clock-time-one",
+                "mdi:clock-time-four",
                 "mul_pro4",
             )
             for coordinator in robot_coordinators(hass, entry)
@@ -402,6 +402,36 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             for coordinator in robot_coordinators(hass, entry)
         ]
     )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                None,
+                "Map version",
+                None,
+                "mapversion",
+                "",
+                "mdi:map",
+                "mapversion",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )    
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                None,
+                "Border Length",
+                "m",
+                "borderLen",
+                "",
+                "mdi:tape-measure",
+                "borderlen",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )        
 ###    
     async_add_devices(
         [
