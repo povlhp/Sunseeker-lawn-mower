@@ -214,7 +214,7 @@ class SunseekerRoboticmower:
             self.login_ok = True
             if self.session.get("access_token"):
                 self.get_device_list()
-                self.get_mapversion()
+                self.get_mapversion(self, device_sn)
                 for device in self.devicelist["data"]:
                     device_sn = device["deviceSn"]
                     self.deviceArray.append(device_sn)
