@@ -221,6 +221,51 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             for coordinator in robot_coordinators(hass, entry)
         ]
     )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                None,
+                "Zone 2 pct time",
+                "%",
+                "mul_pro2",
+                "",
+                "mdi:clock-time-two",
+                "sunseeker_mul_pro2",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                None,
+                "Zone 3 pct time",
+                "%",
+                "mul_pro3",
+                "",
+                "mdi:clock-time-three",
+                "sunseeker_mul_pro3",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
+    async_add_devices(
+        [
+            SunseekerSensor(
+                coordinator,
+                None,
+                "Zone 4 pct time",
+                "%",
+                "mul_pro4",
+                "",
+                "mdi:clock-time-one",
+                "sunseeker_mul_pro4",
+            )
+            for coordinator in robot_coordinators(hass, entry)
+        ]
+    )
 
     async_add_devices(
         [
@@ -291,7 +336,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "min",
                 "on_min",
                 "",
-                "mdi:timersand",
+                "mdi:timer",
                 "sunseeker_on_min",
             )
             for coordinator in robot_coordinators(hass, entry)
@@ -306,7 +351,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "min",
                 "total_min",
                 "",
-                "mdi:timersand",
+                "mdi:timer",
                 "sunseeker_total_min",
             )
             for coordinator in robot_coordinators(hass, entry)
