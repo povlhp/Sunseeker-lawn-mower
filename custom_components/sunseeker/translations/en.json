@@ -77,8 +77,30 @@
           "name": "Zone 4 start"
         },
         "mul_pro1": {
-          "name": "Zone 1 pct"
+          "name": "Zone pct 1"
         },
+        "mul_pro2": {
+          "name": "Zone pct 2"
+        },
+        "mul_pro3": {
+          "name": "Zone pct 3"
+        },
+        "mul_pro4": {
+          "name": "Zone pct 4"
+        },
+        "mul_meter1": {
+          "name": "Zone distance 1"
+        },
+        "mul_meter2": {
+          "name": "Zone distance 2"
+        },
+        "mul_meter3": {
+          "name": "Zone distance 3"
+        },
+        "mul_meter4": {
+          "name": "Zone distance 4"
+        },
+
         "sunseeker_mul_meter1": {
           "name": "Zone 1 mm along wire"
         },

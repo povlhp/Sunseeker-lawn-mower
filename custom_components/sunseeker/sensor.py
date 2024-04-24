@@ -341,17 +341,17 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
-    )    
+    )
     async_add_devices(
         [
             SunseekerSensor(
                 coordinator,
                 SensorDeviceClass.DURATION,
-                "total On minutes",
+                "Total On time",
                 "min",
                 "total_min",
                 "",
-                "mdi:timer",
+                "mdi:clock-time-nine-outline",
                 "sunseeker_total_min",
             )
             for coordinator in robot_coordinators(hass, entry)
