@@ -231,7 +231,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_pro2",
                 "",
                 "mdi:clock-time-two",
-                "sunseeker_mul_pro2",
+                "mul_pro2",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -246,7 +246,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_pro3",
                 "",
                 "mdi:clock-time-three",
-                "sunseeker_mul_pro3",
+                "mul_pro3",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -261,7 +261,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_pro4",
                 "",
                 "mdi:clock-time-one",
-                "sunseeker_mul_pro4",
+                "mul_pro4",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -277,7 +277,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_meter1",
                 "",
                 "mdi:tape-measure",
-                "sunseeker_mul_meter1",
+                "mul_meter1",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -292,7 +292,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_meter2",
                 "",
                 "mdi:tape-measure",
-                "sunseeker_mul_meter2",
+                "mul_meter2",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -307,7 +307,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_meter3",
                 "",
                 "mdi:tape-measure",
-                "sunseeker_mul_meter4",
+                "mul_meter3",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
@@ -322,7 +322,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_meter4",
                 "",
                 "mdi:tape-measure",
-                "sunseeker_mul_meter4",
+                "mul_meter4",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
