@@ -223,7 +223,7 @@ class SunseekerRoboticmower:
                     ad.DeviceBluetooth = device["bluetoothMac"]
                     self.robotList.append(ad)
                     self.get_settings(device_sn)
-                    self.get_mapversion(self, device_sn)
+                    self.get_mapversion(device_sn)
                 for device_sn in self.deviceArray:
                     self.update_devices(device_sn)
                     self.get_device(device_sn).InitValues()
