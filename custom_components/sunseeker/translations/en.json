@@ -114,8 +114,13 @@
         },
         "sunseeker_cur_area": {
           "name": "Current area"
+        },
+        "map version": {
+          "name": "Map version"
         }
-
+        "borderlen": {
+          "name": "Border Length"
+        }        
       },
       "binary_sensor": {
         "sunseeker_dock": {

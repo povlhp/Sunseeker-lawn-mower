@@ -57,6 +57,7 @@ class SunseekerDevice:
         self.area = 0
         self.cur_area = 0
         self.mapversion = 0
+        self.borderLen = 0
         self.map = [];
 
 
@@ -402,6 +403,8 @@ class SunseekerRoboticmower:
                     if (data.get("cmd") == 522):
                         device.mapversion = data.get("ver")
                         self.updatemap(self)
+                if "borderLength" in data:
+                    device.borderLen = data.get("borderLength")          
                 if "Mon" in data:
                     device.Schedule.UpdateFromMqtt(data.get("Mon"), 1)
                     schedule = True
