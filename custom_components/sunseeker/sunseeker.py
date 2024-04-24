@@ -214,7 +214,6 @@ class SunseekerRoboticmower:
             self.login_ok = True
             if self.session.get("access_token"):
                 self.get_device_list()
-                self.get_mapversion(self, device_sn)
                 for device in self.devicelist["data"]:
                     device_sn = device["deviceSn"]
                     self.deviceArray.append(device_sn)
@@ -224,6 +223,7 @@ class SunseekerRoboticmower:
                     ad.DeviceBluetooth = device["bluetoothMac"]
                     self.robotList.append(ad)
                     self.get_settings(device_sn)
+                    self.get_mapversion(self, device_sn)
                 for device_sn in self.deviceArray:
                     self.update_devices(device_sn)
                     self.get_device(device_sn).InitValues()
