@@ -76,6 +76,9 @@
         "sunseekerzone4": {
           "name": "Zone 4 start"
         },
+        "mul_pro1": {
+          "name": "Zone 1 pct"
+        },
         "sunseeker_mul_meter1": {
           "name": "Zone 1 mm along wire"
         },

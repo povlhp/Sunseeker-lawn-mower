@@ -79,24 +79,27 @@
 			"sunseeker_schedule": {
 				"name": "Tidsstyrring"
 			},
+			"mul_pro1": {
+				"name": "Zone 1 pct"
+			},
 			"sunseeker_mul_meter1": {
 				"name": "Zone 1 mm along wire"
-			  },
-			  "sunseeker_on_min": {
-				"name": "On tim"
-			  },
+			},
+			"sunseeker_on_min": {
+				"name": "On time"
+			},
 			  "sunseeker_total_min": {
 				"name": "Total time"
-			  },
+			},
 			  "sunseeker_on_area": {
 				"name": "On area"
-			  },
+			},
 			  "sunseeker_area": {
 				"name": "Area"
-			  },
+			},
 			  "sunseeker_cur_area": {
 				"name": "Current area"
-			  }			
+			}			
 		},
 		"binary_sensor": {
 			"sunseeker_dock": {

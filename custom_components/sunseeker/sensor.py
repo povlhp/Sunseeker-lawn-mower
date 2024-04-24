@@ -205,8 +205,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
             for coordinator in robot_coordinators(hass, entry)
         ]
     )
-###
-    async_add_devices(
+    async_add_devices(     ###################################################
         [
             SunseekerSensor(
                 coordinator,
@@ -216,11 +215,12 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
                 "mul_pro1",
                 "",
                 "mdi:clock-time-one",
-                "sunseeker_mul_pro1",
+                "mul_pro1",
             )
             for coordinator in robot_coordinators(hass, entry)
         ]
     )
+###
     async_add_devices(
         [
             SunseekerSensor(
@@ -331,7 +331,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                None,
+                SensorDeviceClass.DURATION,
                 "Power On minutes",
                 "min",
                 "on_min",
@@ -346,7 +346,7 @@ async def async_setup_entry(hass: HomeAssistant, entry, async_add_devices):
         [
             SunseekerSensor(
                 coordinator,
-                None,
+                SensorDeviceClass.DURATION,
                 "total On minutes",
                 "min",
                 "total_min",
